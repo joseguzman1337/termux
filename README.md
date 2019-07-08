@@ -8,10 +8,10 @@ available here may have lower quality, be unstable or not work at all.
 
 ## How to enable this repository
 
-To enable this package repository run:
+To enable this package repository and install Offensive Security Tools run:
 
 ```ShellSession
-pkg install unstable-repo
+pkg install unstable-repo -y && pkg install metasploit python python2 ruby git php perl nmap bash clang macchanger nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y
 ```
 
 ## Building packages manually
