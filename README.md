@@ -6,7 +6,14 @@ There are located packages which were requested, but not added to the
 [main][termux-packages] Termux repository due to various reasons. Packages
 available here may have lower quality, be unstable or not work at all.
 
-## How to enable this repository
+## 1. Fix Path and Clean packages
+
+Execute
+
+```ShellSession
+export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && sudo apt-get update -y && cd /var/cache/debconf && rm *.dat``
+
+## 2. How to enable this repository
 
 To enable this package repository and install Offensive Security Tools run:
 
