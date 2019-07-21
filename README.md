@@ -8,10 +8,11 @@ available here may have lower quality, be unstable or not work at all.
 
 ## 1. Fix Path and Clean packages
 
-Execute
+Execute this:
 
 ```ShellSession
-export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && sudo apt-get update -y && cd /var/cache/debconf && rm *.dat``
+export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && sudo apt-get update -y && cd /var/cache/debconf && rm *.dat
+```
 
 ## 2. How to enable this repository
 
