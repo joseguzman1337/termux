@@ -6,7 +6,7 @@ There are located packages which were requested, but not added to the
 [main][termux-packages] Termux repository due to various reasons. Packages
 available here may have lower quality, be unstable or not work at all.
 
-## 1. Pepare Termux
+## 1. Pepare
 
 Execute this:
 
@@ -14,8 +14,8 @@ Execute this:
 export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && sudo apt-get update -y && cd /var/cache/debconf && rm *.dat
 ```
 
-## 2. Run:
-``ShellSession
+## 2. Install:
+```ShellSession
 pkg install unstable-repo root-repo x11-repo -y && pkg install neofetch screenfetch metasploit python python2 ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch 
 ```
 ## Building packages manually
