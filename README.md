@@ -1,4 +1,4 @@
-# Repository for new/unstable packages
+# Install Offensive Security Tools in Termux
 
 [![Powered by JFrog Bintray](./.github/static/powered-by-bintray.png)](https://bintray.com)
 
@@ -6,7 +6,7 @@ There are located packages which were requested, but not added to the
 [main][termux-packages] Termux repository due to various reasons. Packages
 available here may have lower quality, be unstable or not work at all.
 
-## 1. Fix Path and Clean packages
+## 1. Pepare Termux
 
 Execute this:
 
@@ -14,11 +14,8 @@ Execute this:
 export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && sudo apt-get update -y && cd /var/cache/debconf && rm *.dat
 ```
 
-## 2. How to enable this repository
-
-To enable this package repository and install Offensive Security Tools run:
-
-```ShellSession
+## 2. Run:
+``ShellSession
 pkg install unstable-repo root-repo x11-repo -y && pkg install neofetch screenfetch metasploit python python2 ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch 
 ```
 ## Building packages manually
