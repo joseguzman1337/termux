@@ -7,7 +7,7 @@ There are located packages which were requested, but not added to the
 available here may have lower quality, be unstable or not work at all.
 
 ## Pre-Requisite
-The below 3 steps needs and independent session, for that just slide from left to rigth in the screen of termux for see the option.
+Each one of this 3 steps needs and independent session, for that just slide from left to rigth in termux for see the option.
 "New Session"
 
 ## 1. Prepare Termux for Kali
