@@ -6,6 +6,7 @@ There are located packages which were requested, but not added to the
 [main][termux-packages] Termux repository due to various reasons. Packages
 available here may have lower quality, be unstable or not work at all.
 
+## Pre-Requisite
 The below 3 steps needs and independent session, for that just slide from left to rigth in the screen of termux for see the option.
 "New Session"
 
