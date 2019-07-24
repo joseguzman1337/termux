@@ -6,7 +6,7 @@ There are located packages which were requested, but not added to the
 [main][termux-packages] Termux repository due to various reasons. Packages
 available here may have lower quality, be unstable or not work at all.
 
-## 1. Open a new session in Termux and
+## 1. Prepare Termux for Kali and Parrot
 
 Execute this:
 
@@ -14,7 +14,7 @@ Execute this:
 export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && exit 
 ```
 
-## 2. Install Kali Linux and Parrot in Termux:
+## 2. Install Kali and Parrot in Termux:
 ```ShellSession
 pkg install unstable-repo root-repo x11-repo -y && pkg install neofetch coreutils busybox screenfetch metasploit python python2 ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch && pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Kali/kali.sh && bash kali.sh && ./start-kali.sh && apt install git apt-utils figlet procps -y && apt-get update --fix-missing && cd && git clone https://github.com/remo7777/Termux-Kali-apktool.git && cd Termux-Kali-apktool && bash setup  
 ```
