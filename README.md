@@ -6,12 +6,12 @@ There are located packages which were requested, but not added to the
 [main][termux-packages] Termux repository due to various reasons. Packages
 available here may have lower quality, be unstable or not work at all.
 
-## 1. Pepare
+## 1. Open a new session in Termux and
 
 Execute this:
 
 ```ShellSession
-export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && apt-get update -y && cd /var/cache/debconf && rm *.dat
+export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && exit 
 ```
 
 ## 2. Install:
