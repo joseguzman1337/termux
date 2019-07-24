@@ -19,7 +19,7 @@ export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && expo
 To enable this package repository and install Offensive Security Tools run:
 
 ```ShellSession
-pkg install unstable-repo -y && pkg install metasploit python python2 ruby git php perl nmap bash clang macchanger nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y
+pkg install unstable-repo root-repo x11-repo -y && pkg install metasploit python python2 ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y
 ```
 
 ## Building packages manually
