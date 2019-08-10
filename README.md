@@ -23,8 +23,10 @@ termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/s
 ```
 
 ## 2. Install Metasploit + Nmap + Kali in Termux:
+Repeat this step 3 times in the same session
+
 ```ShellSession
-pkg install unstable-repo root-repo x11-repo -y && pkg install neofetch coreutils busybox screenfetch metasploit && gem install nokogiri && pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch && pkg install wget openssl-tool proot -y
+pkg install unstable-repo root-repo x11-repo -y && pkg install neofetch coreutils busybox screenfetch metasploit && gem install nokogiri && pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch && pkg install wget openssl-tool proot -y && neofetch
 ```
 
 ```ShellSession
