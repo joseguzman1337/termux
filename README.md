@@ -24,7 +24,7 @@ termux-setup-storage
 termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin
 ```
 
-## 2. Install Metasploit + Nmap + Start Kali inside of Termux:
+## 2. Install Metasploit + Nmap + Kali:
 Repeat this step 3 times in the same session
 
 ```ShellSession
@@ -35,14 +35,45 @@ pkg install unstable-repo root-repo x11-repo -y && pkg install neofetch coreutil
 hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Kali/kali.sh && bash kali.sh && ./start-kali.sh && apt install git apt-utils figlet procps -y && apt-get update --fix-missing && neofetch
 ```
 
-## 3. Install Termux Kali Bind-apk tool:
+## 3. Install Bind-apk tool:
 ```ShellSession
 cd && git clone https://github.com/remo7777/Termux-Kali-apktool.git && cd Termux-Kali-apktool && bash setup  
 ```
-## 4. Update system
+## 4. INstall 
 
 ```ShellSession
-apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && grub-mkconfig && cd && neofetch
+termux-wake-lock;\
+termux-setup-storage;\
+apt-get update -y;\
+apt-get install wget -y;\
+wget https://raw.githubusercontent.com/Hax4us/Nethunter-In-Termux/master/kalinethunter;\
+bash kalinethunter;\
+rm *;\
+startkali
+
+
+
+apt-key adv --keyserver hkp://keys.gnupg.net --recv-keys 7D8D0BF6;\
+wget https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.1_all.deb;\
+apt --fix-broken install;\
+dpkg -i ./kali-archive-keyring_2018.1_all.deb;\
+rm kali-archive-keyring_2018.1_all.deb;\
+apt-get update -y;\
+apt-get install neofetch lolcat -y;\
+echo "neofetch --logo | lolcat;neofetch model distro os kernel shell memory" >> ~/.bashrc;\
+echo "PS1='
+ ╭──────────[ $(whoami)@$(uname -n) ]─[ $PWD ]
+ ╰── • '" >> /etc/bash.bashrc;exit
+
+
+
+echo "clear;startkali;exit" >> ~/.bashrc;bash;exit
+```
+
+## 5. Update system
+
+```ShellSession
+neofetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && grub-mkconfig && cd && neofetch
 ```
 
 #
