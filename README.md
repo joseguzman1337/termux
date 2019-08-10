@@ -37,6 +37,12 @@ hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/maste
 ```ShellSession
 cd && git clone https://github.com/remo7777/Termux-Kali-apktool.git && cd Termux-Kali-apktool && bash setup  
 ```
+## 4. Update system
+
+```ShellSession
+pkg update -y && pkg upgrade -y && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && grub-mkconfig && cd && neofetch
+```
+
 #
 #
 #
