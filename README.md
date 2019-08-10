@@ -33,7 +33,7 @@ pkg install unstable-repo root-repo x11-repo -y && pkg install neofetch coreutil
 hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Kali/kali.sh && bash kali.sh && ./start-kali.sh && apt install git apt-utils figlet procps -y && apt-get update --fix-missing && neofetch
 ```
 
-## 3. Install Bind-apk tool + Parrot in Termux:
+## 3. Install Bind-apk tool based on Parrot for Termux:
 ```ShellSession
 cd && git clone https://github.com/remo7777/Termux-Kali-apktool.git && cd Termux-Kali-apktool && bash setup  
 ```
