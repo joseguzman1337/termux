@@ -1,4 +1,4 @@
-# Install Offensive Security Tools in Termux
+# Offensive Security Tools in Termux
 
 NO ROOT REQUIRED ;)
 
