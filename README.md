@@ -22,7 +22,7 @@ termux-setup-storage
 termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin
 ```
 
-## 2. Install Metasploit + Nmap + Kali in Termux:
+## 2. Install Metasploit + Nmap + Start Kali inside of Termux:
 Repeat this step 3 times in the same session
 
 ```ShellSession
