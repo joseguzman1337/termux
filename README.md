@@ -12,7 +12,14 @@ Each one of this 3 steps needs and independent session, for that just slide from
 
 ## 1. Prepare Termux
 ```ShellSession
-pkg install termux-tools && termux-setup-storage termux-setup-storage && termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin
+pkg install termux-tools
+```
+
+```ShellSession
+termux-setup-storage
+```
+```ShellSession
+termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin
 ```
 
 ## 2. Install Metasploit + Nmap + Kali in Termux:
