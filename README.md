@@ -1,5 +1,7 @@
 # Install Offensive Security Tools in Termux
 
+NO ROOT REQUIRED ;)
+
 [![Powered by JFrog Bintray](./.github/static/powered-by-bintray.png)](https://bintray.com)
 
 There are located packages which were requested, but not added to the
