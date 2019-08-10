@@ -30,6 +30,11 @@ Repeat this step 3 times in the same session
 ```ShellSession
 pkg install unstable-repo root-repo x11-repo -y && pkg install neofetch coreutils busybox screenfetch metasploit && gem install nokogiri && pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch && pkg install wget openssl-tool proot -y && neofetch
 ```
+#
+```ShellSession
+apt install neofetch -y && neofetch && gem install nokogiri && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && grub-mkconfig && cd && neofetch
+```
+#
 
 ```ShellSession
 hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Kali/kali.sh && bash kali.sh && ./start-kali.sh && apt install git apt-utils figlet procps -y && apt-get update --fix-missing && neofetch
@@ -39,7 +44,7 @@ hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/maste
 ```ShellSession
 cd && git clone https://github.com/remo7777/Termux-Kali-apktool.git && cd Termux-Kali-apktool && bash setup  
 ```
-## 4. INstall 
+## 4. Install Kali Linux NetHunter
 
 ```ShellSession
 termux-wake-lock;\
@@ -70,10 +75,10 @@ echo "PS1='
 echo "clear;startkali;exit" >> ~/.bashrc;bash;exit
 ```
 
-## 5. Update system
+## 5. Update & Start Nmap + Metasploit Ninja
 
 ```ShellSession
-neofetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && grub-mkconfig && cd && neofetch
+apt install neofetch -y && neofetch && gem install nokogiri && neofetch && apt install nmap metasploit-framework coreutils busybox screenfetch python python2 ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && screenfetch && cd /usr/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && neofetch && cd /opt/metasploit/common/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && screenfetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && grub-mkconfig && cd && neofetch && msfconsole
 ```
 
 #
