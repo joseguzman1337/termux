@@ -84,11 +84,17 @@ echo "PS1='
 echo "clear;startkali;exit" >> ~/.bashrc;bash;exit
 ```
 
-## 5. Update Nokogiri
+## 5. Install Nokogiri & Lolcat
 
 ```ShellSession
 gem install nokogiri
 ```
+#
+
+```ShellSession
+gem install lolcat
+```
+
 ## 6. Install Wordlists
 
 ```ShellSession
