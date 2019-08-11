@@ -91,6 +91,7 @@ gem install nokogiri
 ```ShellSession
 apt install neofetch -y && neofetch && neofetch && apt install nmap metasploit-framework coreutils busybox screenfetch python python2 ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor wget wcalc openssl bmon -y && screenfetch && cd /usr/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && neofetch && cd /opt/metasploit/common/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && screenfetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && grub-mkconfig && cd && neofetch && msfconsole
 ```
+
 #
 #
 #
