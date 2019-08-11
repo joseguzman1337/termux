@@ -97,7 +97,7 @@ git clone https://github.com/4k4xs4pH1r3/bbh.git /usr/share/wordlists && cd /usr
 
 ## 7. Start Nmap + Metasploit Ninja
 ```ShellSession
-apt install neofetch -y && neofetch && apt install nmap metasploit-framework coreutils busybox screenfetch python2 python3 postgresql gimp php-mbstring ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor wget wcalc openssl bmon -y && screenfetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && cd && neofetch && msfdb init && msfconsole
+apt install neofetch -y && neofetch && apt install nmap metasploit-framework coreutils busybox screenfetch python2 python3 postgresql ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor wget wcalc openssl bmon -y && screenfetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && cd && neofetch && msfdb init && msfconsole
 ```
 #
 #
