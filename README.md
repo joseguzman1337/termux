@@ -89,7 +89,7 @@ gem install nokogiri
 ## 6. Install Wordlists
 
 ```ShellSession
-git clone https://github.com/4k4xs4pH1r3/bbh.git /usr/share/wordlists
+git clone https://github.com/4k4xs4pH1r3/bbh.git /usr/share/wordlists && cd /usr/share/wordlists/wordlist && mv *.* /usr/share/wordlists && mv dirb disbuster fern-wifi wfuzz /usr/share/wordlists && rm -r /usr/share/wordlists/wordlists
 ```
 
 ## 7. Start Nmap + Metasploit Ninja
