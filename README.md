@@ -100,7 +100,7 @@ gem install lolcat
 git clone https://github.com/4k4xs4pH1r3/bbh.git /usr/share/wordlists && cd /usr/share/wordlists/wordlists && mv *.* /usr/share/wordlists && mv dirb dirbuster fern-wifi wfuzz /usr/share/wordlists && rm -r /usr/share/wordlists/wordlists
 ```
 
-## 7. Add Ninja Hacking tools + Start Metasploit
+## 7. Start Metasploit
 ```ShellSession
 apt install neofetch -y && neofetch && apt install nmap metasploit-framework -y && screenfetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && cd && neofetch && msfdb init && service postgresql start && msfconsole
 ```
