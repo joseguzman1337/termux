@@ -34,7 +34,7 @@ pkg install unstable-repo root-repo x11-repo -y && pkg install neofetch coreutil
 ```
 #
 ```ShellSession
-gem install nokogiri
+pkg install ruby apt && install nokogiri
 ```
 #
 ```ShellSession
