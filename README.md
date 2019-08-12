@@ -30,11 +30,11 @@ termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/s
 ## 2. Install Metasploit + Nmap + Kali:
 
 ```ShellSession
-pkg install unstable-repo root-repo x11-repo -y && pkg install neofetch coreutils busybox screenfetch -y && screenfetch
+pkg install unstable-repo root-repo x11-repo ruby -y && pkg install neofetch coreutils busybox screenfetch -y && screenfetch
 ```
 #
 ```ShellSession
-pkg install ruby apt && install nokogiri
+apt install nokogiri
 ```
 #
 ```ShellSession
