@@ -86,7 +86,7 @@ echo "clear;startkali;exit" >> ~/.bashrc;bash;exit
 ## 5. Install Nokogiri & Lolcat
 
 ```ShellSession
-apt install gem -y && gem install nokogiri
+apt install gem ruby -y && gem install nokogiri
 ```
 #
 
