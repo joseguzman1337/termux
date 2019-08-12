@@ -64,17 +64,15 @@ wget https://raw.githubusercontent.com/Hax4us/Nethunter-In-Termux/master/kalinet
 bash kalinethunter;\
 rm *;\
 startkali
-```
 
-#
-```ShellSession
-apt-key adv --recv-keys --keyserver keys.gnupg.net 7D8D0BF6;\
+
+
+apt-key adv --keyserver hkp://keys.gnupg.net --recv-keys 7D8D0BF6;\
 wget https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.1_all.deb;\
 apt --fix-broken install;\
 dpkg -i ./kali-archive-keyring_2018.1_all.deb;\
 rm kali-archive-keyring_2018.1_all.deb;\
 apt-get update -y;\
-apt-get install neofetch lolcat -y;\
 echo "neofetch --logo | lolcat;neofetch model distro os kernel shell memory" >> ~/.bashrc;\
 echo "PS1='
  ╭──────────[ $(whoami)@$(uname -n) ]─[ $PWD ]
