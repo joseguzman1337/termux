@@ -64,10 +64,10 @@ wget https://raw.githubusercontent.com/Hax4us/Nethunter-In-Termux/master/kalinet
 bash kalinethunter;\
 rm *;\
 startkali
+```
 
-
-
-
+#
+```ShellSession
 apt-key adv --recv-keys --keyserver keys.gnupg.net 7D8D0BF6;\
 wget https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.1_all.deb;\
 apt --fix-broken install;\
