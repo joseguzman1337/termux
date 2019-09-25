@@ -73,7 +73,7 @@ apt --fix-broken install;\
 dpkg -i ./kali-archive-keyring_2018.1_all.deb;\
 rm kali-archive-keyring_2018.1_all.deb;\
 apt-get update -y;\
-apt-get isnatll neofetch lolcat -y;\
+apt-get install neofetch lolcat -y;\
 echo "neofetch --logo | lolcat;neofetch model distro os kernel shell memory" >> ~/.bashrc;\
 echo "PS1='
  ╭──────────[ $(whoami)@$(uname -n) ]─[ $PWD ]
