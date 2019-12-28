@@ -275,7 +275,7 @@ Update and Check Metasploit Framework 5:
 #
  
 
-# 8. Create and Save your workspace
+# 11. Create and Save your workspace
 
     workspace -a ad
     
