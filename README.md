@@ -195,6 +195,7 @@ apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && ap
 Configure the services and database of Metasploit Framework 5:
 
     su 
+    msfupdate
     update-rc.d postgresql enable && update-rc.d nginx enable && service postgresql start 
     su postgres
     createuser root -P
