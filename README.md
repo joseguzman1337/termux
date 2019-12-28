@@ -177,6 +177,103 @@ Close Termux and Open Again
 neofetch && msfdb init && msfconsole
 ```
 
+```ShellSession
+apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
+```
+
 #
 #
 #
+# Configure Metasploit Framework 5 
+
+(omnibus Nightly):
+
+    apt install nmap nginx -y && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+    chmod 755 msfinstall && \
+    ./msfinstall
+
+Configure the services and database of Metasploit Framework 5:
+
+    su 
+    update-rc.d postgresql enable && update-rc.d nginx enable && service postgresql start 
+    su postgres
+    createuser root -P
+    createdb —owner=root msfdb
+    exit
+    
+Close terminal
+   
+Open a new terminal as a normal user and verify that services are running and initiate the database of Metasploit Framework 5. 
+  #   
+    service --status-all
+    msfdb init
+
+#
+ (for repair use "msfdb reinit")
+
+It's time to open Metasploit Framework 5 (Works in Kali Linux and Ubuntu Cosmic)
+   
+    /opt/metasploit-framework/bin/./msfconsole
+
+In Parrot Security:
+
+    /usr/share/metasploit-framework/./msfconsole
+    
+Update and Check Metasploit Framework 5:
+
+    msfupdate
+    db_status
+    db_rebuild_cache
+    load nexpose
+    load nessus
+    save
+#   
+#
+#
+#
+ 
+
+# 5. Create and Save your workspace
+
+    workspace -a ad
+    
+    setg Prompt x(%whi%H/%grn%U/%whi%L%grn%D/%whi%T/%grn%W/%whiS%S/%grnJ%J)
+    setg ConsoleLogging y
+    setg LogLevel 5
+    setg SessionLogging y
+    setg TimestampOutput true
+    save
+    exit
+
+Make a backup each time that you need of each one of your workspaces by separately
+
+    db_export -f xml /root/msfuExported.xml
+
+Importing a file from an earlier scan (This is done using db_import followed by the path to our file.)
+
+    db_import /root/msfu/nmapScan
+    
+# 6. Add Vuln + Vulners + Vulscan NSE as root
+
+Specialized Scripts to get CVE's details with Nmap & Metasploit
+
+    apt install git neofetch screenfetch -y && cd /usr/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && neofetch && cd /opt/metasploit/common/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd /usr/share/nmap/scripts/vulscan/utilities/updater && chmod +x updateFiles.sh && ./updateFiles.sh && cd && screenfetch
+    
+For display help for the individual scripts use this option
+   
+    --script-help=$scriptname
+   
+To get an easy list of the installed scripts, use 
+
+    locate nse | grep nmap
+#
+#
+The db_nmap sessions will be saved in xml for you can restart an early scan using
+    
+    msfconsole
+    msfpro
+    db_nmap --resume /root/.msf4/local/file.xml
+    
+The history of Metasploit commands are here:
+
+    /root/.msf4/history
