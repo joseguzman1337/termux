@@ -194,10 +194,10 @@ apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && ap
 ```
 #
 ```ShellSession
-sudo gem install lolcat nokogiri bundle rails   
+gem install lolcat nokogiri bundle rails   
 ```
 ```ShellSession
-sudo gem update --system
+gem update --system
 ```
 
 Configure the services and database of Metasploit Framework 5:
