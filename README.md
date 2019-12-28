@@ -136,7 +136,7 @@ PUNIT
 step2
 
 👇
- bash puneet75.sh Puneet89
+ bash puneet75.sh x
 
 step 3
 
