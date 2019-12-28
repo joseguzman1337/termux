@@ -173,20 +173,7 @@ apt install git -y && git clone https://github.com/4k4xs4pH1r3/bbh.git /usr/shar
 
 Close Termux and Open Again
 
-## 7. Configure Metasploit Framework 5 
-
-```ShellSession
-neofetch && msfdb init && msfconsole
-```
-
-```ShellSession
-apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
-```
-
-#
-#
-#
-# Install Metasploit omnibus Nightly:
+## 7. Install Metasploit omnibus Nightly:
 ```ShellSession
     apt install nmap nginx -y && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
     chmod 755 msfinstall && \
@@ -291,3 +278,13 @@ The db_nmap sessions will be saved in xml for you can restart an early scan usin
 The history of Metasploit commands are here:
 
     /root/.msf4/history
+    
+# 10. Start Metasploit
+
+```ShellSession
+apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
+```
+
+```ShellSession
+neofetch && msfdb init && msfconsole
+```
