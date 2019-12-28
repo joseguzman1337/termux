@@ -244,7 +244,7 @@ Update and Check Metasploit Framework 5:
 #
  
 
-# 5. Create and Save your workspace
+# 7. Create and Save your workspace
 
     workspace -a ad
     
@@ -264,7 +264,7 @@ Importing a file from an earlier scan (This is done using db_import followed by 
 
     db_import /root/msfu/nmapScan
     
-# 6. Add Vuln + Vulners + Vulscan NSE as root
+# 8. Add Vuln + Vulners + Vulscan NSE as root
 
 Specialized Scripts to get CVE's details with Nmap & Metasploit
 
