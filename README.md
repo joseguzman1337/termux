@@ -272,7 +272,6 @@ To get an easy list of the installed scripts, use
 The db_nmap sessions will be saved in xml for you can restart an early scan using
     
     msfconsole
-    msfpro
     db_nmap --resume /root/.msf4/local/file.xml
     
 The history of Metasploit commands are here:
