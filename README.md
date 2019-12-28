@@ -173,7 +173,7 @@ apt install git -y && git clone https://github.com/4k4xs4pH1r3/bbh.git /usr/shar
 
 Close Termux and Open Again
 
-## 7. Start Metasploit
+## 7. Configure Metasploit Framework 5 
 
 ```ShellSession
 neofetch && msfdb init && msfconsole
@@ -186,9 +186,7 @@ apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && ap
 #
 #
 #
-# Configure Metasploit Framework 5 
-
-(omnibus Nightly):
+# Install Metasploit omnibus Nightly:
 ```ShellSession
     apt install nmap nginx -y && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
     chmod 755 msfinstall && \
@@ -244,7 +242,7 @@ Update and Check Metasploit Framework 5:
 #
  
 
-# 7. Create and Save your workspace
+# 8. Create and Save your workspace
 
     workspace -a ad
     
@@ -264,7 +262,7 @@ Importing a file from an earlier scan (This is done using db_import followed by 
 
     db_import /root/msfu/nmapScan
     
-# 8. Add Vuln + Vulners + Vulscan NSE as root
+# 9. Add Vuln + Vulners + Vulscan NSE as root
 
 Specialized Scripts to get CVE's details with Nmap & Metasploit
 
