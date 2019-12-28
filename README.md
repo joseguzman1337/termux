@@ -245,22 +245,23 @@ Open a new terminal as a normal user and verify that services are running and in
 service --status-all
 ```
 
+It's time to open Metasploit Framework 5 (Works in Kali Linux and Ubuntu Cosmic)
+
 ```ShellSession
-neofetch && msfdb init && msfconsole
+neofetch && msfdb init && /opt/metasploit-framework/bin/./msfconsole
 ```
 
 #
  (for repair use "msfdb reinit")
 
-It's time to open Metasploit Framework 5 (Works in Kali Linux and Ubuntu Cosmic)
    
-    /opt/metasploit-framework/bin/./msfconsole
 
 #
 In Parrot Security:
 
-    /usr/share/metasploit-framework/./msfconsole
-    
+```ShellSession
+neofetch && msfdb init && /usr/share/metasploit-framework/./msfconsole
+```
 Update and Check Metasploit Framework 5:
 
     msfupdate
