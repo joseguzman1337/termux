@@ -219,7 +219,7 @@ The history of Metasploit commands are here:
 
     /root/.msf4/history
     
-# 9. Start Metasploit
+## 9. Start Metasploit
 
 ```ShellSession
 apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
@@ -276,7 +276,7 @@ Update and Check Metasploit Framework 5:
 #
  
 
-# 10. Create and Save your workspace
+## 10. Create and Save your workspace
 
     workspace -a ad
     
