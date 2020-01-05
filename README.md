@@ -34,12 +34,12 @@ termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/s
 You can build all packages manually by using provided docker image. The only
 requirements are Linux-based host with Docker installed.
 
-1. Clone this repository:
+a. Clone this repository:
 	```ShellSession
 	git clone https://github.com/termux/unstable-packages
 	```
 
-2. Enter build environment (will download docker image if necessary):
+b. Enter build environment (will download docker image if necessary):
 	```ShellSession
 	cd ./unstable-packages
 	./start-builder.sh
@@ -47,7 +47,7 @@ requirements are Linux-based host with Docker installed.
 	Command shown above will start builder for Android 7 (API level 24). If you
 	need to build package for Android 5, use `./start-builder-legacy.sh`.
 
-3. Choose package you want to build and run:
+c. Choose package you want to build and run:
 	```ShellSession
 	./build-package.sh -a ${arch} ${package name}
 	```
@@ -189,7 +189,7 @@ gem update --system
 
 #
     
-# 9. Add Vuln + Vulners + Vulscan NSE as root
+## 8. Add Vuln + Vulners + Vulscan NSE as root
 
 Specialized Scripts to get CVE's details with Nmap & Metasploit
 
@@ -219,7 +219,7 @@ The history of Metasploit commands are here:
 
     /root/.msf4/history
     
-# 10. Start Metasploit
+# 9. Start Metasploit
 
 ```ShellSession
 apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
@@ -276,7 +276,7 @@ Update and Check Metasploit Framework 5:
 #
  
 
-# 11. Create and Save your workspace
+# 10. Create and Save your workspace
 
     workspace -a ad
     
