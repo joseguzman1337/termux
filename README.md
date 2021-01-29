@@ -67,7 +67,7 @@ If you wish to contribute, please take a look on our [contributing guide](./CONT
 ## 2. Install Metasploit + Nmap + Kali:
 
 ```ShellSession
-pkg install unstable-repo root-repo x11-repo ruby pkg -y && pkg install neofetch coreutils busybox screenfetch -y && screenfetch
+pkg install unstable-repo root-repo x11-repo ruby -y && pkg install neofetch coreutils busybox screenfetch -y && screenfetch
 ```
 #
 ```ShellSession
