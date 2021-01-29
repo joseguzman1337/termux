@@ -64,7 +64,7 @@ If you wish to contribute, please take a look on our [contributing guide](./CONT
 #
 #
 #
-## 2. Install Metasploit + Nmap + Kali:
+## 2. Install Nmap + Kali:
 
 ```ShellSession
 pkg install unstable-repo root-repo x11-repo ruby -y && pkg install neofetch coreutils busybox screenfetch -y && screenfetch
@@ -75,7 +75,7 @@ gem install nokogiri
 ```
 #
 ```ShellSession
-pkg install metasploit -y && pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch && pkg install wget openssl-tool proot -y && neofetch
+pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl nmap bash clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch && pkg install wget openssl-tool proot -y && neofetch
 ```
 #
 ```ShellSession
