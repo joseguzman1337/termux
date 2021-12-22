@@ -10,7 +10,7 @@ available here may have lower quality, be unstable or not work at all.
 
 ## Pre-Requisite
 
-Storage Free Space = 3.37 GB
+Free Storage Space = 33.37 GB
 
 Each one of this 3 steps needs and independent session, for that just slide from left to rigth in termux for see the option. "New Session"
 
