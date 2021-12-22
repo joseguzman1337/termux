@@ -67,7 +67,7 @@ If you wish to contribute, please take a look on our [contributing guide](./CONT
 ## 2. Install Nmap + Kali:
 
 ```ShellSession
-pkg install unstable-repo root-repo x11-repo ruby -y && pkg install neofetch coreutils busybox screenfetch -y && screenfetch
+pkg install unstable-repo -y && pkg install root-repo -y && pkg install x11-repo -y pkg install ruby -y && pkg install neofetch coreutils busybox screenfetch -y && screenfetch
 ```
 #
 ```ShellSession
@@ -121,27 +121,6 @@ echo "PS1='
 echo "clear;startkali;exit" >> ~/.bashrc;bash;exit
 ```
 #
-```ShellSession
-cat >> puneet75.sh <<- PUNIT
-rm -r -f ~/.bashrc
-echo "NAME=\$1" >> ~/.bashrc
-echo "export PS1='
-\[\033[0;31m\]┌─[\[\033[1;34m\]\\\$NAME\[\033[1;33m\]@\[\033[1;36m\]x\[\033[0;31m\]]─[\[\033[0;32m\]\w\[\033[0;31m\]]
-\[\033[0;31m\]└──╼ \[\033[1;33m\]#\[\033[0m\] '" >> ~/.bashrc
-echo "export LS_OPTIONS='--color=auto'" >> ~/.bashrc
-echo "alias ls='ls --color=auto'" >> ~/.bashrc
-echo "alias grep='grep --color=auto'" >> ~/.bashrc
-PUNIT
-
-step2
-
-👇
- bash puneet75.sh x
-
-step 3
-
-👉 source ~/.bashrc
-```
 #
 #
 #
@@ -150,7 +129,7 @@ step 3
 ## 5. Install Nokogiri & Lolcat
 
 From this point in advance execute in the same termux session
-
+Only this lines as root
 ```ShellSession
 apt install gem ruby -y
 ```
@@ -165,10 +144,10 @@ gem install nokogiri
 gem install lolcat
 ```
 
-## 6. Update System
+## 6. Update System as root
 
 ```ShellSession
-apt install git -y && git clone https://github.com/4k4xs4pH1r3/bbh.git /usr/share/wordlists && cd /usr/share/wordlists/wordlists && mv *.* /usr/share/wordlists && mv dirb dirbuster fern-wifi wfuzz /usr/share/wordlists && rm -r /usr/share/wordlists/wordlists && git clone https://github.com/danielmiessler/SecLists.git /usr/share/SecLists && cd && apt install neofetch screenfetch -y && neofetch && apt install nmap metasploit-framework asciinema steghide radare2 mtr firmware-realtek net-tools wpasupplicant wireless-tools -y && screenfetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && cd && sudo apt-get install python python3 python-pip python3-pip python-dev python-setuptools -y && neofetch && bash <(wget -qO- https://git.io/vAtmB)
+apt update -y && apt install git -y && git clone https://github.com/4k4xs4pH1r3/bbh.git /usr/share/wordlists && cd /usr/share/wordlists/wordlists && mv *.* /usr/share/wordlists && mv dirb dirbuster fern-wifi wfuzz /usr/share/wordlists && rm -r /usr/share/wordlists/wordlists && cd /usr/share/ && git clone https://github.com/danielmiessler/SecLists.git /usr/share/SecLists && cd && apt install neofetch screenfetch -y && neofetch && apt install nmap metasploit-framework asciinema steghide radare2 mtr firmware-realtek net-tools wpasupplicant wireless-tools -y && screenfetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && cd && sudo apt-get install python python3 python-pip python3-pip python-dev python-setuptools -y && neofetch && bash <(wget -qO- https://git.io/vAtmB)
 ```
 
 Close Termux and Open Again
