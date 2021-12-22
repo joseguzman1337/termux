@@ -1,6 +1,6 @@
 # Offensive Security Tools for Termux
 
-NO ROOT REQUIRED ;)
+NO Device ROOTED REQUIRED ;)
 
 [![Powered by JFrog Bintray](./.github/static/powered-by-bintray.png)](https://bintray.com)
 
