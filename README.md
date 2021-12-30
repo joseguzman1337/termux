@@ -230,7 +230,7 @@ neofetch && msfdb init && /opt/metasploit-framework/bin/./msfconsole
 
    
 
-# Update and Check Metasploit Framework:
+## Update and Check Metasploit Framework:
 
     msfupdate
     db_status
