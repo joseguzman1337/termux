@@ -230,13 +230,7 @@ neofetch && msfdb init && /opt/metasploit-framework/bin/./msfconsole
 
    
 
-#
-In Parrot Security:
-
-```ShellSession
-neofetch && msfdb init && /usr/share/metasploit-framework/./msfconsole
-```
-Update and Check Metasploit Framework 5:
+# Update and Check Metasploit Framework:
 
     msfupdate
     db_status
