@@ -86,11 +86,7 @@ apt install neofetch -y && neofetch && gem install nokogiri && apt-get autoclean
 hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Kali/kali.sh && bash kali.sh && ./start-kali.sh && apt install git apt-utils figlet procps -y && apt-get update --fix-missing && neofetch
 ```
 
-## 3. Install Bind-apk tool:
-```ShellSession
-cd && git clone https://github.com/remo7777/Termux-Kali-apktool.git && cd Termux-Kali-apktool && bash setup  
-```
-## 4. Install Kali Linux NetHunter
+## 3. Install Kali Linux NetHunter
 
 ```ShellSession
 termux-wake-lock;\
@@ -126,7 +122,7 @@ echo "clear;startkali;exit" >> ~/.bashrc;bash;exit
 #
 #
 
-## 5. Install Nokogiri & Lolcat
+## 4. Install Nokogiri & Lolcat
 
 From this point in advance execute in the same termux session
 Only this lines as root
@@ -144,7 +140,7 @@ gem install nokogiri
 gem install lolcat
 ```
 
-## 6. Update System as root
+## 5. Update System as root
 
 ```ShellSession
 apt update -y && apt install git -y && git clone https://github.com/4k4xs4pH1r3/bbh.git /usr/share/wordlists && cd /usr/share/wordlists/wordlists && mv *.* /usr/share/wordlists && mv dirb dirbuster fern-wifi wfuzz /usr/share/wordlists && rm -r /usr/share/wordlists/wordlists && cd /usr/share/ && git clone https://github.com/danielmiessler/SecLists.git /usr/share/SecLists && cd && apt install neofetch screenfetch -y && neofetch && apt install nmap metasploit-framework asciinema steghide radare2 mtr firmware-realtek net-tools wpasupplicant wireless-tools -y && screenfetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && cd && sudo apt-get install python python3 python-pip python3-pip python-dev python-setuptools -y && neofetch && bash <(wget -qO- https://git.io/vAtmB)
@@ -152,7 +148,7 @@ apt update -y && apt install git -y && git clone https://github.com/4k4xs4pH1r3/
 
 Close Termux and Open Again
 
-## 7. Install Metasploit omnibus Nightly:
+## 6. Install Metasploit omnibus Nightly:
 ```ShellSession
     apt install nmap nginx -y && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
     chmod 755 msfinstall && \
@@ -168,7 +164,7 @@ gem update --system
 
 #
     
-## 8. Add Vuln + Vulners + Vulscan NSE as root
+## 7. Add Vuln + Vulners + Vulscan NSE as root
 
 Specialized Scripts to get CVE's details with Nmap & Metasploit
 
@@ -198,7 +194,7 @@ The history of Metasploit commands are here:
 
     /root/.msf4/history
     
-## 9. Start Metasploit
+## 8. Start Metasploit
 
 ```ShellSession
 apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
@@ -255,7 +251,7 @@ Update and Check Metasploit Framework 5:
 #
  
 
-## 10. Create and Save your workspace
+## 9. Create and Save your workspace
 
     workspace -a ad
     
