@@ -81,10 +81,6 @@ pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl 
 ```ShellSession
 apt install neofetch -y && neofetch && gem install nokogiri && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
 ```
-#
-```ShellSession
-hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Kali/kali.sh && bash kali.sh && ./start-kali.sh && apt install git apt-utils figlet procps -y && apt-get update --fix-missing && neofetch
-```
 
 ## 3. Install Kali Linux NetHunter
 
