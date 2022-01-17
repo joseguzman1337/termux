@@ -69,7 +69,7 @@ If you wish to contribute, please take a look on our [contributing guide](./CONT
 ## 2. Install Pre-Requisites:
 
 ```ShellSession
-pkg install unstable-repo -y && pkg install root-repo -y && pkg install x11-repo -y pkg install ruby -y && pkg install neofetch coreutils busybox screenfetch -y && screenfetch
+pkg install unstable-repo -y && pkg install root-repo -y && pkg install x11-repo -y && pkg install ruby -y && pkg install neofetch coreutils busybox screenfetch -y && screenfetch
 ```
 #
 ```ShellSession
