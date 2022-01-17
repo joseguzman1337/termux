@@ -19,7 +19,7 @@ Now open Termux, each one of this 3 steps needs and independent session, for tha
 
 ## 1. Prepare Termux
 ```ShellSession
-pkg install termux-tools
+pkg update -y && pkg upgrade -y && pkg install termux-tools
 ```
 #
 ```ShellSession
