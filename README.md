@@ -122,7 +122,7 @@ echo "clear;startkali;exit" >> ~/.bashrc;bash;exit
 From this point in advance execute in the same termux session
 Only this lines as root
 ```ShellSession
-apt install gem ruby -y
+apt update -y && apt install gem ruby -y
 ```
 
 #
