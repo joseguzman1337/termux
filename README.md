@@ -81,7 +81,12 @@ pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl 
 ```
 #
 
-## 3. Install Kali Linux NetHunter
+## 3.0 Install Kali Linux Nethuner (Method A)
+```ShellSession
+pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Nethunter/nethunter.sh && bash nethunter.sh
+```
+
+## 3.1 Install Kali Linux NetHunter (Method B)
 
 ```ShellSession
 termux-wake-lock;\
