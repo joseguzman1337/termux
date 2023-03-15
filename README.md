@@ -10,7 +10,7 @@ available here may have lower quality, be unstable or not work at all.
 
 ## Pre-Requisite
 
-Download [F-Droid](https://f-droid.org/F-Droid.apk) in your Andorid, open it, search termux and install it.
+Download [F-Droid](https://f-droid.org/F-Droid.apk) in your Android, open it, search termux and install it.
 
 Free Storage Space = 33.37 GB
 
