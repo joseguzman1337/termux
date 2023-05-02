@@ -2,6 +2,7 @@
 
 No needs a Device ROOTED ;)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dc2c0e91b2ac43bb9f0e6690224188d4)](https://app.codacy.com/gh/4k4xs4pH1r3/termux?utm_source=github.com&utm_medium=referral&utm_content=4k4xs4pH1r3/termux&utm_campaign=Badge_Grade)
 [![Powered by JFrog Bintray](./.github/static/powered-by-bintray.png)](https://bintray.com)
 
 There are located packages which were requested, but not added to the
