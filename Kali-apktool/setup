@@ -1,0 +1,148 @@
+#!/bin/bash
+
+spin () {
+
+local pid=$!
+local delay=0.25
+local spinner=( '█■■■■' '■█■■■' '■■█■■' '■■■█■' '■■■■█' )
+
+while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
+
+for i in "${spinner[@]}"
+do
+	tput civis
+	echo -ne "\033[34m\r[*] \e[35mDownloading..please wait.........\e[33m[\033[32m$i\033[33m]\033[0m   ";
+	sleep $delay
+	printf "\b\b\b\b\b\b\b\b";
+done
+done
+printf "   \b\b\b\b\b"
+tput cnorm
+printf "\e[1;33m [Done]\e[0m";
+echo "";
+
+}
+
+package() {
+	`base64 -d <<< "YXB0IGluc3RhbGwgZmlnbGV0IHB2IG5jdXJzZXMtdXRpbHMgYmludXRpbHMgY29yZXV0aWxzIHdn
+ZXQgZ2l0IHRlcm11eC1hcGkgb3BlbnNzbC10b29sIHByb290IC15Cg=="`
+}
+tsetup() {
+if [ -e $PREFIX/bin/bind-apk ]; then
+	rm $PREFIX/bin/bind-apk
+	cp bind-apk $PREFIX/bin/
+	chmod 700 $PREFIX/bin/bind-apk
+else
+	cp bind-apk $PREFIX/bin/
+	chmod 700 $PREFIX/bin/bind-apk
+fi
+cp .kali.sh ~/kali.sh
+if [ -d $HOME/metasploit-framework ]; then
+if [ -e $HOME/metasploit-framework/lib/msf/core/payload/apk.rb.old ]; then
+rm $HOME/metasploit-framework/lib/msf/core/payload/apk.rb
+cp apk.rb $HOME/metasploit-framework/lib/msf/core/payload/
+(patch $HOME/metasploit-framework/lib/msf/core/payload/apk.rb < patch_file/apk.rb.patch) &> /dev/null;
+else
+cp $HOME/metasploit-framework/lib/msf/core/payload/apk.rb $HOME/metasploit-framework/lib/msf/core/payload/apk.rb.old
+cp apk.rb $HOME/metasploit-framework/lib/msf/core/payload/
+(patch $HOME/metasploit-framework/lib/msf/core/payload/apk.rb < patch_file/apk.rb.patch) &> /dev/null;
+fi
+fi
+if [ -e $PREFIX/opt/metasploit-framework ]; then
+if [ -e $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb.old ]; then
+rm $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb
+cp apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payload/
+(patch $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb < patch_file/apk.rb.patch) &> /dev/null;
+else
+cp $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb.old
+cp apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payload/
+(patch $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb < patch_file/apk.rb.patch) &> /dev/null;
+fi
+fi
+cp patch_file/kapktool $PREFIX/bin/
+cp patch_file/ksignapk $PREFIX/bin/
+chmod 700 $PREFIX/bin/kapktool $PREFIX/bin/ksignapk
+}
+uinstall() {
+cd ~/
+bash kali.sh
+sleep 1
+rm kali.sh
+#sed commad add soon..
+cp ~/start-kali.sh ~/.kali
+if [ -e $PREFIX/bin/kali ]; then
+rm $PREFIX/bin/kali
+echo "#! /usr/bin/env bash" >> $PREFIX/bin/kali
+echo  >> /data/data/com.termux/files/usr/bin/kali
+echo  >> /data/data/com.termux/files/usr/bin/kali
+echo bash $HOME/.kali >> $PREFIX/bin/kali
+chmod 700 $PREFIX/bin/kali
+else
+        echo "#! /usr/bin/env bash" >> $PREFIX/bin/kali
+        echo  >> $PREFIX/bin/kali
+        echo  >> $PREFIX/bin/kali
+        echo bash $HOME/.kali >> $PREFIX/bin/kali
+        chmod 700 $PREFIX/bin/kali
+fi
+cd -
+if [ -d $HOME/kali-fs/root/u-setup ]; then
+        rm -rf $HOME/kali-fs/root/u-setup
+fi
+cp u-setup -r $HOME/kali-fs/root/
+cp u-setup/setup $HOME/kali-fs/root/
+}
+upackage() {
+cat << EOF | kali
+bash ./setup
+EOF
+}
+
+
+clear;
+echo "";
+echo -e "\e[1;34m[*] \e[32minstall packages....\e[0m";
+echo "";
+apt update -y &> /dev/null;
+(
+package && apt install patch procps gawk -y
+) &> /dev/null;
+termux-wake-lock;
+if [ -e $PREFIX/share/figlet/Remo773.flf ]; then
+	echo -e "\e[1;34m[*] \033[32mRemo773.flf figlet font is present\033[0m";
+	sleep 4
+else
+wget https://raw.githubusercontent.com/remo7777/REMO773/master/Remo773.flf &> /dev/null;
+sleep 3
+cat Remo773.flf >> $PREFIX/share/figlet/Remo773.flf
+sleep 3
+rm Remo773.fif
+fi
+clear;
+echo "";
+echo -e "\033[33m$(figlet -f Remo773 "Bind-Apk")\e[0m"
+echo -e "\e[1;32m
++----------------------------------*/
+Remo773 : (\e[33m15.6.2019\e[32m)
+
+1. Bind-apk	(\e[35mV1.4\e[32m)
++----------------------------------*/
+\033[0m";
+tput setaf 3;
+read -p  "Do you want to setup this ? (y/n) " PROC33
+
+tput sgr 0
+if [ "$PROC33" = "y" ]; then
+
+echo -e "\e[1;34m[*] \e[32mPlease wait.. setup termux bind-apk\e[0m";
+tsetup &> /dev/null & spin
+sleep 1
+echo -e "\e[1;34m[*] \e[32mPlease wait.. installing kali on termux..\e[0m";
+uinstall &> /dev/null & spin
+sleep 1
+echo -e "\e[1;34m[*] \e[32mPlease wait.. installing kali packages..\e[0m";
+upackage &> /dev/null & spin
+sleep 1
+echo -e "\e[1;34m[*] \e[32mSetup Finished..\e[0m"
+fi
+termux-wake-unlock;
+exit 0
