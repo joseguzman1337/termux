@@ -15,8 +15,13 @@ Download [F-Droid](https://f-droid.org/F-Droid.apk) in your Android, open it, se
 
 Free Storage Space = 33.37 GB
 
-Now open Termux, each one of this 3 steps needs and independent session, for that just slide from left to rigth in termux for see the option. "New Session"
+Now open Termux, each one of this 3 steps needs an independent session, for that just slide from left to rigth in termux for see the option. "New Session"
 
+
+## 0. Select Termux CloudFlare Repo
+```ShellSession
+termux-change-repo
+```
 
 ## 1. Prepare Termux
 ```ShellSession
