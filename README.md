@@ -90,7 +90,8 @@ pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl 
 ## 3.0 Install Kali Linux Nethuner (Method A)
 ```ShellSession
 pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Nethunter/nethunter.sh && bash nethunter.sh
-
+```
+#
 You can now launch Kali Nethunter with executing the script
 ```ShellSession
 ./start-nethunter.sh
