@@ -1,21 +1,21 @@
 # Offensive Security Tools for Termux
 
-No needs a Device ROOTED ;)
+Is not required to Unlock the Bootloader or ROOT of your Device ;)
 
 [![Powered by JFrog Bintray](./.github/static/powered-by-bintray.png)](https://bintray.com)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/12cdb5d6ed82487385bb69104be4f6ee)](https://app.codacy.com/gh/4k4xs4pH1r3/termux/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
-There are located packages which were requested, but not added to the
+There are located packages that were requested, but not added to the
 [main][termux-packages] Termux repository due to various reasons. Packages
-available here may have lower quality, be unstable or not work at all.
+available here may have lower quality, be unstable, or not work at all.
 
 ## Pre-Requisite
 
-Download [F-Droid](https://f-droid.org/F-Droid.apk) in your Android, open it, search termux and install it.
+Download [F-Droid](https://f-droid.org/F-Droid.apk) on your Android, open it, search termux, and install it.
 
 Free Storage Space = 33.37 GB
 
-Now open Termux, each one of this 3 steps needs an independent session, for that just slide from left to rigth in termux for see the option. "New Session"
+Now open Termux, each one of these 3 steps needs an independent session, for that just slide from left to right in termux to see the option. "New Session"
 
 
 ## 0. Select Termux CloudFlare Repo
@@ -25,7 +25,7 @@ termux-change-repo
 
 ## 1. Prepare Termux
 ```ShellSession
-pkg update -y && pkg upgrade -y && pkg install termux-tools
+pkg update -y && pkg upgrade -y && pkg install termux-tools net-tools iproute2 unstable-repo root-repo x11-repo -y
 ```
 #
 ```ShellSession
@@ -39,8 +39,8 @@ termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/s
 
 ## (Optional) Building packages manually
 
-You can build all packages manually by using provided docker image. The only
-requirements are Linux-based host with Docker installed.
+You can build all packages manually by using the provided docker image. The only
+requirements are Linux-based hosts with Docker installed.
 
 a. Clone this repository:
 	```ShellSession
@@ -52,10 +52,10 @@ b. Enter build environment (will download docker image if necessary):
 	cd ./unstable-packages
 	./start-builder.sh
 	```
-	Command shown above will start builder for Android 7 (API level 24). If you
-	need to build package for Android 5, use `./start-builder-legacy.sh`.
+	The command shown above will start the builder for Android 7 (API level 24). If you
+	need to build a package for Android 5, use `./start-builder-legacy.sh`.
 
-c. Choose package you want to build and run:
+c. Choose the package you want to build and run:
 	```ShellSession
 	./build-package.sh -a ${arch} ${package name}
 	```
@@ -79,7 +79,7 @@ pkg update && pkg install unstable-repo root-repo x11-repo -y && apt update && a
 ```
 #
 ```ShellSession
-gem install nokogiri
+gem install nokogiri && gem update --system 3.5.6
 ```
 #
 ```ShellSession
@@ -158,7 +158,7 @@ apt update -y && apt install git -y && cd /usr/share && mv /usr/share/wordlists 
 
 Close Termux and Open Again
 
-## 6. Install Metasploit omnibus Nightly:
+## 6. Install Metasploit Omnibus nightly:
 ```ShellSession
     apt install nmap nginx -y && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
     chmod 755 msfinstall && \
@@ -200,7 +200,7 @@ The db_nmap sessions will be saved in xml for you can restart an early scan usin
     msfconsole
     db_nmap --resume /root/.msf4/local/file.xml
     
-The history of Metasploit commands are here:
+The history of Metasploit commands is here:
 
     /root/.msf4/history
     
