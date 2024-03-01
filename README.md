@@ -107,10 +107,10 @@ startkali
 
 
 apt-key adv --keyserver hkp://keys.gnupg.net --recv-keys 7D8D0BF6;\
-wget https://http.kali.org/pool/main/k/kali-archive-keyring/kali-archive-keyring_2022.1_all.deb;\
+wget https://http.kali.org/pool/main/k/kali-archive-keyring/kali-archive-keyring_2024.1_all.deb;\
 apt --fix-broken install;\
-dpkg -i ./kali-archive-keyring_2022.1_all.deb;\
-rm kali-archive-keyring_2022.1_all.deb;\
+dpkg -i ./kali-archive-keyring_2024.1_all.deb;\
+rm kali-archive-keyring_2024.1_all.deb;\
 apt-get update -y;\
 apt-get install neofetch lolcat -y;\
 echo "neofetch --logo | lolcat;neofetch model distro os kernel shell memory" >> ~/.bashrc;\
