@@ -133,28 +133,26 @@ echo "clear;startkali;exit" >> ~/.bashrc;bash;exit
 #
 #
 
-## 4. Install Nokogiri & Lolcat
+## 4. Create Kali User & Install Nokogiri + Lolcat
 
 From this point in advance execute in the same termux session
 Only this lines as root
 ```ShellSession
-apt update -y && apt install gem ruby -y
+passwd
 ```
-
 #
 ```ShellSession
-gem install nokogiri
+chown root:root /usr/bin/sudo && chmod 4755 /usr/bin/sudo && sudo useradd -m -s /bin/bash -G sudo kali && echo "kali ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
 ```
-
 #
 ```ShellSession
-gem install lolcat
+sudo passwd kali
 ```
 
 ## 5. Update System as root
 
 ```ShellSession
-apt install neofetch -y && neofetch && gem install nokogiri && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
+sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch && sudo gem install nokogiri && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch
 ```
 
 ```ShellSession
