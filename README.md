@@ -43,17 +43,17 @@ pkg update && pkg install unstable-repo root-repo x11-repo -y && apt update && a
 ```ShellSession
 sudo sed -i '/nameserver 127.0.0.53/s/^/#/' /etc/resolv.conf && echo -e "nameserver 1.1.1.1\nnameserver 8.8.8.8\n\n# Round Robin\noptions rotate" | sudo tee -a /etc/resolv.conf
 ```
-
+#
 ```ShellSession
 sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch && sudo gem install nokogiri && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch
 ```
-
+#
 ```ShellSession
 apt update -y && apt install git -y && cd /usr/share && mv /usr/share/wordlists /usr/share/wordlists_bck && git clone https://github.com/4k4xs4pH1r3/SecLists.git /usr/share/wordlists && cd /usr/share/wordlists_bck/ && mv * -u -f /usr/share/wordlists/ && cd /usr/share/ && git clone https://github.com/danielmiessler/SecLists.git /usr/share/SecLists && cd && apt install neofetch screenfetch -y && neofetch && apt install nmap metasploit-framework asciinema steghide radare2 mtr firmware-realtek net-tools wpasupplicant wireless-tools -y && screenfetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && cd && sudo apt-get install python python3 python-pip python3-pip python-dev python-setuptools -y && neofetch && bash <(wget -qO- https://git.io/vAtmB)
 ```
-
+#
 Close Termux and Open Again
-
+#
 ## 4. Install Metasploit Omnibus nightly:
 ```ShellSession
 gem install lolcat nokogiri bundle rails   
