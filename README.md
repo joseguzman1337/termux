@@ -40,6 +40,9 @@ pkg update && pkg install unstable-repo root-repo x11-repo -y && apt update && a
 ```
 #
 ## 3. Update System as root
+```ShellSession
+sudo sed -i '/nameserver 127.0.0.53/s/^/#/' /etc/resolv.conf && echo -e "nameserver 1.1.1.1\nnameserver 8.8.8.8\n\n# Round Robin\noptions rotate" | sudo tee -a /etc/resolv.conf
+```
 
 ```ShellSession
 sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch && sudo gem install nokogiri && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch
