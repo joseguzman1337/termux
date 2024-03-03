@@ -89,7 +89,10 @@ gem install lolcat nokogiri bundle rails
 sudo apt install nmap -y && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
 ```
 #
-    
+The message "setpriv: setresgid failed: Operation not permitted" is a known issue and can be safely ignored. It doesn't affect the functionality of Metasploit.
+
+You can proceed by running msfconsole in your terminal to launch the Metasploit console
+
 ## 5. Add Vuln + Vulners + Vulscan NSE as root
 
 Specialized Scripts to get CVE's details with Nmap & Metasploit
