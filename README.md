@@ -14,6 +14,7 @@ Free Storage Space = 33.37 GB
 
 Now open Termux, steps 0, 1, and 2, need to be executed in an independent Termux session, for that just slide from left to right in Termux to see the option. "New Session"
 
+The below documentation is an improvement of this one= https://www.kali.org/docs/nethunter/nethunter-rootless/
 
 ## 0. Select Termux CloudFlare Repo
 ```ShellSession
