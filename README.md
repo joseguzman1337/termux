@@ -86,9 +86,6 @@ bash <(wget -qO- https://git.io/vAtmB)
 gem install lolcat nokogiri bundle rails   
 ```
 ```ShellSession
-gem update --system
-```
-```ShellSession
 sudo apt install nmap -y && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
 ```
 #
