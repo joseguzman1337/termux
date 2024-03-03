@@ -5,17 +5,14 @@ Is not required to Unlock the Bootloader or ROOT of your Device ;)
 [![Powered by JFrog Bintray](./.github/static/powered-by-bintray.png)](https://bintray.com)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/12cdb5d6ed82487385bb69104be4f6ee)](https://app.codacy.com/gh/4k4xs4pH1r3/termux/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
-There are located packages that were requested, but not added to the
-[main][termux-packages] Termux repository due to various reasons. Packages
-available here may have lower quality, be unstable, or not work at all.
 
 ## Pre-Requisite
 
-Download [F-Droid](https://f-droid.org/F-Droid.apk) on your Android, open it, search termux, and install it.
+Download [F-Droid](https://f-droid.org/F-Droid.apk) on your Android, open it, search Termux, and install it.
 
 Free Storage Space = 33.37 GB
 
-Now open Termux, each one of these 3 steps needs an independent session, for that just slide from left to right in termux to see the option. "New Session"
+Now open Termux, steps 0, 1, and 2, need to be executed in an independent Termux session, for that just slide from left to right in Termux to see the option. "New Session"
 
 
 ## 0. Select Termux CloudFlare Repo
@@ -36,120 +33,14 @@ termux-setup-storage
 termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin
 ```
 #
-
-## (Optional) Building packages manually
-
-You can build all packages manually by using the provided docker image. The only
-requirements are Linux-based hosts with Docker installed.
-
-a. Clone this repository:
-	```ShellSession
-	git clone https://github.com/termux/unstable-packages
-	```
-
-b. Enter build environment (will download docker image if necessary):
-	```ShellSession
-	cd ./unstable-packages
-	./start-builder.sh
-	```
-	The command shown above will start the builder for Android 7 (API level 24). If you
-	need to build a package for Android 5, use `./start-builder-legacy.sh`.
-
-c. Choose the package you want to build and run:
-	```ShellSession
-	./build-package.sh -a ${arch} ${package name}
-	```
-	Replace `${arch}` with target CPU architecture and `${package name}` with
-	package name you want to build.
-
-## Contributing
-
-If you wish to contribute, please take a look on our [contributing guide](./CONTRIBUTING.md).
-
-[termux-packages]: <https://github.com/termux/termux-packages>
-#
-#
-#
-#
-#
 ## 2. Install Pre-Requisites:
 
 ```ShellSession
-pkg update && pkg install unstable-repo root-repo x11-repo -y && apt update && apt install ruby neofetch coreutils busybox screenfetch vim nano python python-pip nodejs git openssh -y && screenfetch
+pkg update && pkg install unstable-repo root-repo x11-repo -y && apt update && apt install ruby neofetch coreutils busybox screenfetch vim nano python python-pip nodejs git openssh -y && screenfetch &&
+pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl nmap bash which neofetch clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch && pkg install wget openssl-tool proot -y && neofetch && wget -O install-nethunter-termux https://offs.ec/2MceZWr && chmod +x install-nethunter-termux && ./install-nethunter-termux
 ```
 #
-```ShellSession
-gem install nokogiri && gem update --system 3.5.6
-```
-#
-```ShellSession
-pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl nmap bash which clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch && pkg install wget openssl-tool proot -y && neofetch
-```
-#
-
-## 3.0 Install Kali Linux Nethuner (Method A)
-```ShellSession
-pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Nethunter/nethunter.sh && bash nethunter.sh
-```
-#
-You can now launch Kali Nethunter with executing the script
-```ShellSession
-./start-nethunter.sh
-```
-
-## 3.1 Install Kali Linux NetHunter (Method B, Use only if Method A fails)
-
-```ShellSession
-termux-wake-lock;\
-termux-setup-storage;\
-apt-get update -y;\
-apt-get install wget -y;\
-wget https://raw.githubusercontent.com/Hax4us/Nethunter-In-Termux/master/kalinethunter;\
-bash kalinethunter;\
-rm *;\
-startkali
-
-
-
-apt-key adv --keyserver hkp://keys.gnupg.net --recv-keys 7D8D0BF6;\
-wget https://http.kali.org/pool/main/k/kali-archive-keyring/kali-archive-keyring_2024.1_all.deb;\
-apt --fix-broken install;\
-dpkg -i ./kali-archive-keyring_2024.1_all.deb;\
-rm kali-archive-keyring_2024.1_all.deb;\
-apt-get update -y;\
-apt-get install neofetch lolcat -y;\
-echo "neofetch --logo | lolcat;neofetch model distro os kernel shell memory" >> ~/.bashrc;\
-echo "PS1='
- ╭──────────[ $(whoami)@$(uname -n) ]─[ $PWD ]
- ╰── • '" >> /etc/bash.bashrc;exit
-
-
-
-echo "clear;startkali;exit" >> ~/.bashrc;bash;exit
-```
-#
-#
-#
-#
-#
-
-## 4. Create Kali User & Install Nokogiri + Lolcat
-
-From this point in advance execute in the same termux session
-Only this lines as root
-```ShellSession
-passwd
-```
-#
-```ShellSession
-chown root:root /usr/bin/sudo && chmod 4755 /usr/bin/sudo && sudo useradd -m -s /bin/bash -G sudo kali && echo "kali ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
-```
-#
-```ShellSession
-sudo passwd kali
-```
-
-## 5. Update System as root
+## 3. Update System as root
 
 ```ShellSession
 sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch && sudo gem install nokogiri && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch
@@ -161,26 +52,23 @@ apt update -y && apt install git -y && cd /usr/share && mv /usr/share/wordlists 
 
 Close Termux and Open Again
 
-## 6. Install Metasploit Omnibus nightly:
-```ShellSession
-    apt install nmap nginx -y && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
-    chmod 755 msfinstall && \
-    ./msfinstall
-```
-#
+## 4. Install Metasploit Omnibus nightly:
 ```ShellSession
 gem install lolcat nokogiri bundle rails   
 ```
 ```ShellSession
 gem update --system
 ```
-
+```ShellSession
+    apt install nmap nginx -y && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+    chmod 755 msfinstall && \
+    ./msfinstall
+```
 #
     
-## 7. Add Vuln + Vulners + Vulscan NSE as root
+## 5. Add Vuln + Vulners + Vulscan NSE as root
 
 Specialized Scripts to get CVE's details with Nmap & Metasploit
-
 ```ShellSession
 apt install git neofetch screenfetch -y && cd /usr/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && neofetch && cd /opt/metasploit/common/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd /usr/share/nmap/scripts/vulscan/utilities/updater && chmod +x updateFiles.sh && ./updateFiles.sh && cd && screenfetch
 ```
@@ -207,7 +95,7 @@ The history of Metasploit commands is here:
 
     /root/.msf4/history
     
-## 8. Start Metasploit
+## 6. Start Metasploit
 
 ```ShellSession
 apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
@@ -258,7 +146,7 @@ neofetch && msfdb init && /opt/metasploit-framework/bin/./msfconsole
 #
  
 
-## 9. Create and Save your workspace
+## 7. Create and Save your workspace
 
     workspace -a ad
     
