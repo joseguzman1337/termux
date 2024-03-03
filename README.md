@@ -76,7 +76,7 @@ apt update -y && \
 apt full-upgrade -y --allow-downgrades && \
 sudo dpkg --configure -a && \
 cd && \
-sudo apt-get install python python3 python-pip python3-pip python-dev python-setuptools -y && \
+sudo apt-get install python2 python2-dev python-dev-is-python3 python3 python3-pip python3-dev python3-setuptools -y && \
 neofetch && \
 bash <(wget -qO- https://git.io/vAtmB)
 ```
