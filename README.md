@@ -81,8 +81,6 @@ neofetch && \
 bash <(wget -qO- https://git.io/vAtmB)
 ```
 #
-Close Termux and Open Again
-#
 ## 4. Install Metasploit Omnibus nightly:
 ```ShellSession
 gem install lolcat nokogiri bundle rails   
