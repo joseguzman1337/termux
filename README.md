@@ -138,7 +138,7 @@ save
 #
  
 
-## 7. Create and Save your workspace
+## Create and Save your workspace
 ```ShellSession
 workspace -a ad
     
