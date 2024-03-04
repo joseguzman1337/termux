@@ -52,23 +52,15 @@ sudo sed -i '/nameserver 127.0.0.53/s/^/#/' /etc/resolv.conf && echo -e "nameser
 echo "deb https://kali.download/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 ```
 #
-## Update System as root & Add Vuln + Vulners + Vulscan NSE as root
+## Update Kali Linux & Add Vuln + Vulners + Vulscan NSE as root
 Specialized Scripts to get CVE's details with Nmap & Metasploit
 ```ShellSession
-sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch && sudo gem install lolcat nokogiri bundle rails && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch && apt install git neofetch screenfetch -y && cd /usr/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && neofetch && sudo pip install --no-cache-dir -U crcmod && sudo apt-get autoclean && sudo apt install -f && sudo apt install neofetch -y && sudo apt -f install && sudo apt autoremove -y && apt-get clean cache && sudo apt update && sudo apt-get autoclean && apt-get clean cache && sudo apt update && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
+sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch && sudo gem install lolcat nokogiri bundle rails && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch && apt install git neofetch screenfetch -y && cd /usr/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && neofetch && sudo pip install --no-cache-dir -U crcmod && sudo apt-get autoclean && sudo apt install -f && sudo apt install neofetch -y && sudo apt -f install && sudo apt autoremove -y && apt-get clean cache && sudo apt update && sudo apt-get autoclean && apt-get clean cache && sudo apt update && sudo apt update -y
 ```
-For display help for the individual scripts use this option
-```ShellSession
---script-help=$scriptname
-```   
-To get an easy list of the installed scripts, use 
-```ShellSession
-locate nse | grep nmap
-```  
 #
 ## If you have plenty of storage space available you might want to run as well
 ```ShellSession
-sudo apt install -y kali-linux-default
+sudo apt install -y kali-linux-default && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
 ```
 #
 ## 5. Install Wordlists + SecLists + Python
@@ -107,7 +99,7 @@ bash <(wget -qO- https://git.io/vAtmB)
 
 ## 6. Start Metasploit
 #
-The db_nmap sessions will be saved in XML for you can restart an early scan using
+The db_nmap sessions will be saved in XML so you can restart an early scan using
 ```ShellSession
 msfconsole
 ```
@@ -188,3 +180,13 @@ Importing a file from an earlier scan (This is done using db_import followed by 
 ```ShellSession
 db_import /root/msfu/nmapScan
 ```
+
+For display help for the individual scripts use this option
+```ShellSession
+--script-help=$scriptname
+```   
+To get an easy list of the installed scripts, use 
+```ShellSession
+locate nse | grep nmap
+```
+
