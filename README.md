@@ -40,11 +40,17 @@ termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/s
 pkg update && pkg install unstable-repo root-repo x11-repo -y && apt update && apt install ruby neofetch coreutils busybox screenfetch vim nano python python-pip nodejs git openssh -y && screenfetch && pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl nmap bash which neofetch clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch && pkg install wget openssl-tool proot -y && neofetch && wget -O install-nethunter-termux https://offs.ec/2MceZWr && chmod +x install-nethunter-termux && ./install-nethunter-termux
 ```
 #
-## 3. Update System as root
+## 3. Prepare Kali Linux NetHunter
+
+# Modify DNS settings in /etc/resolv.conf
 ```ShellSession
 sudo sed -i '/nameserver 127.0.0.53/s/^/#/' /etc/resolv.conf && echo -e "nameserver 1.1.1.1\nnameserver 8.8.8.8\n\n# Round Robin\noptions rotate" | sudo tee -a /etc/resolv.conf
 ```
-#
+# Replace content of /etc/apt/sources.list with Kali Linux CloudFlare repository
+```ShellSession
+echo "deb https://kali.download/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
+```
+# Update System as root
 ```ShellSession
 sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch && sudo gem install nokogiri && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch
 ```
