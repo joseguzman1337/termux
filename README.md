@@ -34,7 +34,7 @@ termux-setup-storage
 termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin
 ```
 #
-## 2. Install Pre-Requisites of Termux and install Kali Linux NetHunter:
+## 2. Add Termux Pre-Requisites + Install Kali Linux NetHunter:
 
 ```ShellSession
 pkg update && pkg install unstable-repo root-repo x11-repo -y && apt update && apt install ruby neofetch coreutils busybox screenfetch vim nano python python-pip nodejs git openssh -y && screenfetch && pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl nmap bash which neofetch clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch && pkg install wget openssl-tool proot -y && neofetch && wget -O install-nethunter-termux https://offs.ec/2MceZWr && chmod +x install-nethunter-termux && ./install-nethunter-termux
