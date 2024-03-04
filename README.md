@@ -58,6 +58,7 @@ sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt in
 ```ShellSession
 sudo apt install -y kali-linux-default
 ```
+## Install Wordlists + SecLists + Python
 #
 ```ShellSession
 if [ ! -d "/usr/share/wordlists" ]; then sudo mkdir /usr/share/wordlists; fi && \
