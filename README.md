@@ -55,7 +55,7 @@ echo "deb https://kali.download/kali kali-rolling main contrib non-free non-free
 ## Update Kali Linux & Add Vuln + Vulners + Vulscan NSE as root
 Specialized Scripts to get CVE's details with Nmap & Metasploit
 ```ShellSession
-sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch screenfetch && sudo gem install lolcat nokogiri bundle rails && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch && apt install git neofetch screenfetch -y && cd /usr/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && neofetch && sudo pip install --no-cache-dir -U crcmod && sudo apt-get install python2 python2-dev python-dev-is-python3 python3 python3-pip python3-dev python3-setuptools nmap metasploit-framework asciinema steghide radare2 mtr firmware-realtek net-tools wpasupplicant wireless-tools -y && screenfetch && bash <(wget -qO- https://git.io/vAtmB) && neofetch && sudo apt-get autoclean && sudo apt install -f && sudo apt install neofetch -y && sudo apt -f install && sudo apt autoremove -y && apt-get clean cache && sudo apt update && sudo apt-get autoclean && apt-get clean cache && sudo apt update && sudo apt update -y && neofetch
+sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch screenfetch git -y && neofetch screenfetch && sudo gem install lolcat nokogiri bundle rails && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch && apt install git neofetch screenfetch -y && cd /usr/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && neofetch && sudo pip install --no-cache-dir -U crcmod && sudo apt-get install python2 python2-dev python-dev-is-python3 python3 python3-pip python3-dev python3-setuptools nmap metasploit-framework asciinema steghide radare2 mtr firmware-realtek net-tools wpasupplicant wireless-tools -y && screenfetch && bash <(wget -qO- https://git.io/vAtmB) && neofetch && sudo apt-get autoclean && sudo apt install -f && sudo apt install neofetch -y && sudo apt -f install && sudo apt autoremove -y && apt-get clean cache && sudo apt update && sudo apt-get autoclean && apt-get clean cache && sudo apt update && sudo apt update -y && neofetch
 ```
 #
 ## If you have plenty of storage space available you might want to run as well
@@ -66,8 +66,6 @@ sudo apt install -y kali-linux-default && sudo apt full-upgrade -y --allow-downg
 ## 5. Install Wordlists + SecLists + Python
 ```ShellSession
 if [ ! -d "/usr/share/wordlists" ]; then sudo mkdir /usr/share/wordlists; fi && \
-apt update -y && \
-apt install git -y && \
 [ -d "/usr/share/wordlists" ] && { sudo mv /usr/share/wordlists /usr/share/wordlists_bck || true; } && \
 git clone https://github.com/4k4xs4pH1r3/SecLists.git /usr/share/wordlists && \
 [ -d "/usr/share/wordlists_bck" ] && { cd /usr/share/wordlists_bck/ && sudo mv * -u -f /usr/share/wordlists/ || true; } && \
