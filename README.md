@@ -14,7 +14,7 @@ Free Storage Space = 33.37 GB
 
 Now open Termux, steps 1, and 2, need to be executed in an independent Termux session, for that just slide from left to right in Termux to see the option. "New Session"
 
-The below documentation is an improvement of this one= https://www.kali.org/docs/nethunter/nethunter-rootless/
+The below documentation is an improvement of this one: https://www.kali.org/docs/nethunter/nethunter-rootless/
 
 ## 0. Select Termux CloudFlare Repo
 ```ShellSession
@@ -34,7 +34,7 @@ termux-setup-storage
 termux-wake-lock && export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin
 ```
 #
-## 2. Install Pre-Requisites:
+## 2. Install Pre-Requisites of Termux and install Kali Linux NetHunter:
 
 ```ShellSession
 pkg update && pkg install unstable-repo root-repo x11-repo -y && apt update && apt install ruby neofetch coreutils busybox screenfetch vim nano python python-pip nodejs git openssh -y && screenfetch && pkg update -y && pkg upgrade -y && pkg install python python2 ruby git php perl nmap bash which neofetch clang nano figlet cowsay curl tar zip unzip tor tsu wget wcalc openssl bmon -y && pkg update -y && pkg upgrade -y && cp $(which pip) $PREFIX/bin/pip3 && neofetch && pkg install wget openssl-tool proot -y && neofetch && wget -O install-nethunter-termux https://offs.ec/2MceZWr && chmod +x install-nethunter-termux && ./install-nethunter-termux
@@ -52,17 +52,26 @@ sudo sed -i '/nameserver 127.0.0.53/s/^/#/' /etc/resolv.conf && echo -e "nameser
 echo "deb https://kali.download/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 ```
 #
-## Update System as root
+## Update System as root & Add Vuln + Vulners + Vulscan NSE as root
+Specialized Scripts to get CVE's details with Nmap & Metasploit
 ```ShellSession
-sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch && sudo gem install nokogiri && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch
+sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch && sudo gem install lolcat nokogiri bundle rails && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch && apt install git neofetch screenfetch -y && cd /usr/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && neofetch && sudo pip install --no-cache-dir -U crcmod && sudo apt-get autoclean && sudo apt install -f && sudo apt install neofetch -y && sudo apt -f install && sudo apt autoremove -y && apt-get clean cache && sudo apt update && sudo apt-get autoclean && apt-get clean cache && sudo apt update && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
 ```
+For display help for the individual scripts use this option
+```ShellSession
+--script-help=$scriptname
+```   
+To get an easy list of the installed scripts, use 
+```ShellSession
+locate nse | grep nmap
+```  
 #
 ## If you have plenty of storage space available you might want to run as well
 ```ShellSession
 sudo apt install -y kali-linux-default
 ```
 #
-## Install Wordlists + SecLists + Python
+## 5. Install Wordlists + SecLists + Python
 ```ShellSession
 if [ ! -d "/usr/share/wordlists" ]; then sudo mkdir /usr/share/wordlists; fi && \
 apt update -y && \
@@ -95,44 +104,14 @@ neofetch && \
 bash <(wget -qO- https://git.io/vAtmB)
 ```
 #
-## 4. Install Metasploit Omnibus nightly:
-```ShellSession
-gem install lolcat nokogiri bundle rails   
-```
-#
-```ShellSession
-sudo apt install nmap -y && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
-```
-#
-The message "setpriv: setresgid failed: Operation not permitted" is a known issue and can be safely ignored. It doesn't affect the functionality of Metasploit.
 
-You can proceed by running msfconsole in your terminal to launch the Metasploit console
-
-## 5. Add Vuln + Vulners + Vulscan NSE as root
-
-Specialized Scripts to get CVE's details with Nmap & Metasploit
-```ShellSession
-apt install git neofetch screenfetch -y && cd /usr/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && neofetch
-```
+## 6. Start Metasploit
 #
-```ShellSession    
-sudo pip install --no-cache-dir -U crcmod && sudo apt-get autoclean && sudo apt install -f && sudo apt install neofetch -y && sudo apt -f install && sudo apt autoremove -y && apt-get clean cache && sudo apt update && sudo apt-get autoclean && apt-get clean cache && sudo apt update && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch
-```
-    
-For display help for the individual scripts use this option
-```ShellSession
---script-help=$scriptname
-```   
-To get an easy list of the installed scripts, use 
-```ShellSession
-locate nse | grep nmap
-```
-#
-#
-The db_nmap sessions will be saved in xml for you can restart an early scan using
+The db_nmap sessions will be saved in XML for you can restart an early scan using
 ```ShellSession
 msfconsole
 ```
+To resume previus Metasploit session commands is here:
 #
 ```ShellSession
 db_nmap --resume /root/.msf4/local/file.xml
@@ -142,14 +121,7 @@ The history of Metasploit commands is here:
 ```ShellSession
 /root/.msf4/history
 ```    
-## 6. Start Metasploit
-
-```ShellSession
-apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
-```
-
-
-Configure the services and database of Metasploit Framework 5:
+## 7. Configure the services and database of Metasploit Framework 5:
 ```ShellSession
 su 
 msfupdate
@@ -161,7 +133,7 @@ exit
 ```    
 Close terminal
    
-Open a new terminal as a normal user and verify that services are running and initiate the database of Metasploit Framework 5. 
+Open a new terminal as a normal user, verify that services are running, and initiate the database of Metasploit Framework 5. 
   #   
 
 ```ShellSession
@@ -207,7 +179,7 @@ setg TimestampOutput true
 save
 exit
 ```
-Make a backup each time that you need of each one of your workspaces by separately
+Make a backup each time that you need each one of your workspaces separately
 ```ShellSession
 db_export -f xml /root/msfuExported.xml
 ```
@@ -216,4 +188,3 @@ Importing a file from an earlier scan (This is done using db_import followed by 
 ```ShellSession
 db_import /root/msfu/nmapScan
 ```
-
