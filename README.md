@@ -1,6 +1,6 @@
 # Offensive Security Tools for Termux
 
-Is not required to Unlock the Bootloader or ROOT of your Device ;)
+Is not required to Unlock the Bootloader of Your Device or ROOT your Device ;)
 
 [![Powered by JFrog Bintray](./.github/static/powered-by-bintray.png)](https://bintray.com)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/12cdb5d6ed82487385bb69104be4f6ee)](https://app.codacy.com/gh/4k4xs4pH1r3/termux/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
