@@ -42,11 +42,11 @@ pkg update && pkg install unstable-repo root-repo x11-repo -y && apt update && a
 #
 ## 3. Prepare Kali Linux NetHunter
 
-# Modify DNS settings in /etc/resolv.conf
+## Modify DNS settings in /etc/resolv.conf
 ```ShellSession
 sudo sed -i '/nameserver 127.0.0.53/s/^/#/' /etc/resolv.conf && echo -e "nameserver 1.1.1.1\nnameserver 8.8.8.8\n\n# Round Robin\noptions rotate" | sudo tee -a /etc/resolv.conf
 ```
-# Replace content of /etc/apt/sources.list with Kali Linux CloudFlare repository
+## Replace content of /etc/apt/sources.list with Kali Linux CloudFlare repository
 ```ShellSession
 echo "deb https://kali.download/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 ```
