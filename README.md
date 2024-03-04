@@ -20,7 +20,7 @@ The below documentation is an improvement of this one= https://www.kali.org/docs
 ```ShellSession
 termux-change-repo
 ```
-
+#
 ## 1. Prepare Termux
 ```ShellSession
 pkg update -y && pkg upgrade -y && pkg install termux-tools net-tools iproute2 unstable-repo root-repo x11-repo -y
@@ -46,20 +46,23 @@ pkg update && pkg install unstable-repo root-repo x11-repo -y && apt update && a
 ```ShellSession
 sudo sed -i '/nameserver 127.0.0.53/s/^/#/' /etc/resolv.conf && echo -e "nameserver 1.1.1.1\nnameserver 8.8.8.8\n\n# Round Robin\noptions rotate" | sudo tee -a /etc/resolv.conf
 ```
+#
 ## Replace content of /etc/apt/sources.list with Kali Linux CloudFlare repository
 ```ShellSession
 echo "deb https://kali.download/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 ```
+#
 # Update System as root
 ```ShellSession
 sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch && sudo gem install nokogiri && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch
 ```
+#
 ## If you have plenty of storage space available you might want to run as well
 ```ShellSession
 sudo apt install -y kali-linux-default
 ```
-## Install Wordlists + SecLists + Python
 #
+## Install Wordlists + SecLists + Python
 ```ShellSession
 if [ ! -d "/usr/share/wordlists" ]; then sudo mkdir /usr/share/wordlists; fi && \
 apt update -y && \
@@ -96,6 +99,7 @@ bash <(wget -qO- https://git.io/vAtmB)
 ```ShellSession
 gem install lolcat nokogiri bundle rails   
 ```
+#
 ```ShellSession
 sudo apt install nmap -y && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
 ```
@@ -110,29 +114,34 @@ Specialized Scripts to get CVE's details with Nmap & Metasploit
 ```ShellSession
 apt install git neofetch screenfetch -y && cd /usr/share/nmap/scripts && git clone https://github.com/scipag/vulscan && git clone https://github.com/vulnersCom/nmap-vulners.git && cd vulscan/utilities/updater/ && chmod +x updateFiles.sh && ./updateFiles.sh && neofetch
 ```
-
+#
 ```ShellSession    
 sudo pip install --no-cache-dir -U crcmod && sudo apt-get autoclean && sudo apt install -f && sudo apt install neofetch -y && sudo apt -f install && sudo apt autoremove -y && apt-get clean cache && sudo apt update && sudo apt-get autoclean && apt-get clean cache && sudo apt update && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch
 ```
     
 For display help for the individual scripts use this option
-   
-    --script-help=$scriptname
-   
+```ShellSession
+--script-help=$scriptname
+```   
 To get an easy list of the installed scripts, use 
-
-    locate nse | grep nmap
+```ShellSession
+locate nse | grep nmap
+```
 #
 #
 The db_nmap sessions will be saved in xml for you can restart an early scan using
-    
-    msfconsole
-    db_nmap --resume /root/.msf4/local/file.xml
+```ShellSession
+msfconsole
+```
+#
+```ShellSession
+db_nmap --resume /root/.msf4/local/file.xml
+```
     
 The history of Metasploit commands is here:
-
-    /root/.msf4/history
-    
+```ShellSession
+/root/.msf4/history
+```    
 ## 6. Start Metasploit
 
 ```ShellSession
@@ -141,15 +150,15 @@ apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && ap
 
 
 Configure the services and database of Metasploit Framework 5:
-
-    su 
-    msfupdate
-    update-rc.d postgresql enable && update-rc.d nginx enable && service postgresql start 
-    su postgres
-    createuser root -P
-    createdb —owner=root msfdb
-    exit
-    
+```ShellSession
+su 
+msfupdate
+update-rc.d postgresql enable && update-rc.d nginx enable && service postgresql start 
+su postgres
+createuser root -P
+createdb —owner=root msfdb
+exit
+```    
 Close terminal
    
 Open a new terminal as a normal user and verify that services are running and initiate the database of Metasploit Framework 5. 
@@ -172,12 +181,14 @@ neofetch && msfdb init && /opt/metasploit-framework/bin/./msfconsole
 
 ## Update and Check Metasploit Framework:
 
-    msfupdate
-    db_status
-    db_rebuild_cache
-    load nexpose
-    load nessus
-    save
+```ShellSession
+msfupdate
+db_status
+db_rebuild_cache
+load nexpose
+load nessus
+save
+```
 #   
 #
 #
@@ -185,21 +196,24 @@ neofetch && msfdb init && /opt/metasploit-framework/bin/./msfconsole
  
 
 ## 7. Create and Save your workspace
-
-    workspace -a ad
+```ShellSession
+workspace -a ad
     
-    setg Prompt x(%whi%H/%grn%U/%whi%L%grn%D/%whi%T/%grn%W/%whiS%S/%grnJ%J)
-    setg ConsoleLogging y
-    setg LogLevel 5
-    setg SessionLogging y
-    setg TimestampOutput true
-    save
-    exit
-
+setg Prompt x(%whi%H/%grn%U/%whi%L%grn%D/%whi%T/%grn%W/%whiS%S/%grnJ%J)
+setg ConsoleLogging y
+setg LogLevel 5
+setg SessionLogging y
+setg TimestampOutput true
+save
+exit
+```
 Make a backup each time that you need of each one of your workspaces by separately
-
-    db_export -f xml /root/msfuExported.xml
-
+```ShellSession
+db_export -f xml /root/msfuExported.xml
+```
+#
 Importing a file from an earlier scan (This is done using db_import followed by the path to our file.)
+```ShellSession
+db_import /root/msfu/nmapScan
+```
 
-    db_import /root/msfu/nmapScan
