@@ -69,10 +69,7 @@ if [ ! -d "/usr/share/wordlists" ]; then sudo mkdir /usr/share/wordlists; fi && 
 [ -d "/usr/share/wordlists" ] && { sudo mv /usr/share/wordlists /usr/share/wordlists_bck || true; } && \
 git clone https://github.com/4k4xs4pH1r3/SecLists.git /usr/share/wordlists && \
 [ -d "/usr/share/wordlists_bck" ] && { cd /usr/share/wordlists_bck/ && sudo mv * -u -f /usr/share/wordlists/ || true; } && \
-cd /usr/share/ && \
-git clone https://github.com/danielmiessler/SecLists.git /usr/share/SecLists && \
-cd && \
-neofetch 
+cd /usr/share/ && git clone https://github.com/danielmiessler/SecLists.git /usr/share/SecLists && cd && neofetch 
 ```
 #
 
