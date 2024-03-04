@@ -52,7 +52,7 @@ sudo sed -i '/nameserver 127.0.0.53/s/^/#/' /etc/resolv.conf && echo -e "nameser
 echo "deb https://kali.download/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 ```
 #
-# Update System as root
+## Update System as root
 ```ShellSession
 sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt install neofetch -y && neofetch && sudo gem install nokogiri && sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && sudo apt-get clean cache && sudo dpkg --configure -a && cd && neofetch && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch
 ```
