@@ -63,7 +63,7 @@ sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo apt in
 sudo apt install -y kali-linux-default && sudo apt full-upgrade -y --allow-downgrades && cd && neofetch && apt-get autoclean && apt install -f && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && cd && neofetch
 ```
 #
-## 5. Improve Wordlists + SecLists
+## 5. Improve Wordlists + Add SecLists
 ```ShellSession
 if [ ! -d "/usr/share/wordlists" ]; then sudo mkdir /usr/share/wordlists; fi && \
 [ -d "/usr/share/wordlists" ] && { sudo mv /usr/share/wordlists /usr/share/wordlists_bck || true; } && \
