@@ -18,7 +18,7 @@ class Msf::Payload::Apk
     warn "[-] #{msg}"
   end
 
-  alias_method :print_bad, :print_error
+  alias print_bad print_error
 
   def usage
     print_error "Usage: #{$0} -x [target.apk] [msfvenom options]\n"
