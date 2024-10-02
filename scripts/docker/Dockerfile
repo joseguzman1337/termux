@@ -6,7 +6,7 @@
 ##   docker push xeffyr/termux-advanced-builder
 ##
 
-FROM ubuntu:24.04@sha256:dfc10878be8d8fc9c61cbff33166cb1d1fe44391539243703c72766894fa834a
+FROM ubuntu:24.04@sha256:e2556dbb8fa320ac3558ab2b868f202d354128ab067aadaaeda2ed3be5acc03c
 
 # Fix locale to avoid warnings:
 ENV LANG en_US.UTF-8
